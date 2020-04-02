@@ -5,21 +5,82 @@
     <meta charset="utf-8" />
     <title>Zooniverse Transients</title>
     <link rel="stylesheet" href="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
+    <link rel="stylesheet" href="app.css" />
   </head>
   <body>
     <!-- you can skip the following line if your page already integrates the jQuery library -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js" charset="utf-8"></script>
-    
-    <!-- insert this snippet where you want Aladin Lite viewer to appear and after the loading of jQuery -->
-    <div id="aladin-lite-div" style="width:100%;height:1000px;"></div>
+
+    <div class="header"><h3>Zooniverse Transient Discoveries</h3></div>
+    <div id="aladin-lite-div" class="aladin"></div>
     <script type="text/javascript" src="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
     <script type="text/javascript">
-        var aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:60});
-        var cat = A.catalog({name: 'Some markers', sourceSize: 18});
-        aladin.addCatalog(cat);
-        cat.addSources([
-            A.marker(0,0, {popupTitle: 'Test', popupDesc: 'Testing'})
-        ]);
+        var aladin = A.aladin('#aladin-lite-div',
+          {
+            survey: 'P/Mellinger/color',
+            fov: 180,
+            target: '195.0 20.0',
+            showReticle: false,
+            showFrame: false,
+            showLayersControl: true,
+            showGotoControl: false,
+            showFullscreenControl: false,
+            fullScreen: false
+          });
+
+        var cat_markers = A.catalog({name: 'markers', shape: 'circle', sourceSize: 40, color: '#FFFFFF'});
+        aladin.addCatalog(cat_markers);
+        cat_markers.addSources(A.marker(208.74945830000001, -28.33386111, {popupTitle: 'Supernova SMTJ13545988-2820020',popupDesc: 'Discovered by: Snapshot Supernova<br/>Volunteers: Anne M. Murray, sodasuze<br/><a href="http://www.astronomerstelegram.org/?read=7261">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(157.7522917, -36.97394444, {popupTitle: 'Supernova SMTJ10310056-3658262',popupDesc: 'Discovered by: Snapshot Supernova<br/>Volunteers: cthomas, monkey_monkey, sweater, joannastar<br/><a href="http://www.astronomerstelegram.org/?read=7261">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(201.42945830000002, -29.54080556, {popupTitle: 'Supernova SMTJ13254308-2932269',popupDesc: 'Discovered by: Snapshot Supernova<br/><a href="http://www.astronomerstelegram.org/?read=7254">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(326.889875, 5.85841667, {popupTitle: 'Supernova PTF10ops',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: Aleksandar, Henryk Krawczyk, ciberjohn, Giovanni Iezzi, Elisabeth Baeten, Sarah Zahorchak, Graham Dungworth, John P Langridge, Marek, Robert Hubbard, Volatile<br/><a href="https://ui.adsabs.harvard.edu/abs/2011MNRAS.412.1309S/abstract">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(322.29902000000004, -29.16283, {popupTitle: 'Supernova 2018bwq',popupDesc: 'Discovered by: Supernova Sighting<br/>Volunteers: Leigh Burchat, Barb Long, Hayden Roberts, Pip Newling<br/><a href="http://www.astronomerstelegram.org/?read=11667">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(201.478224, -37.23668, {popupTitle: 'Supernova 2018bwp',popupDesc: 'Discovered by: Supernova Sighting<br/>Volunteers: Timothy Barnes, Casey Cunningham, Tony Cristiano, Sarah Dean, Robert Edwards, Nicholas East, Karen Franks, Julie Hams, Robert Ian Higgins, Jennifer Hogan, Rusel Last, Mark Longmuir, Andrew McRae, Neil McElhinney, Rosie Miller, Chris Murphy, Christopher Daniel Andrew Quarrell, Gianna ODonnell, Michael Rochler, Hayden Roberts, Lyn Robinson, Stephan Soule, Natalie J. Spillman, Paul Shelmerdine, Robert Vassie, Michael Vickers, Jennifer A Westwood<br/><a href="http://www.astronomerstelegram.org/?read=11671">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(338.3444728, -1.357052821, {popupTitle: 'Supernova 2016hqf',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: marisa_gomez, nilium, chrostek<br/><a href="http://www.astronomerstelegram.org/?read=9711">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(323.2963091, 0.9398916198, {popupTitle: 'Supernova 2016dln',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: qbpd, TED91, chrostek<br/><a href="http://www.astronomerstelegram.org/?read=9269">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(307.5580199, -10.95050213, {popupTitle: 'Supernova 2016els',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: TED91, nilium, voyager1682002<br/><a href="http://www.astronomerstelegram.org/?read=9308">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(167.8883889, 9.072145372, {popupTitle: 'Supernova 2017dhn',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: yuvalszw, nilium, Jose_Campos<br/><a href="http://www.astronomerstelegram.org/?read=10334">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(170.83130119999998, 5.799905474, {popupTitle: 'Supernova 2017dhd',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: Jose_Campos, Astro_Denny, nilium<br/><a href="http://www.astronomerstelegram.org/?read=10328">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(241.84878680000003, 10.42783037, {popupTitle: 'Supernova Impostor AT2017dha',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: peterfoele, nilium, romist<br/><a href="http://www.astronomerstelegram.org/?read=10328">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(166.70773480000003, 14.48778056, {popupTitle: 'Supernova 2017dhm',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: LonMcGregor, Jose_Campos, MingMing<br/><a href="http://www.astronomerstelegram.org/?read=10331">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(178.55989680000002, 11.7612763, {popupTitle: 'Supernova 2017dhp ',popupDesc: 'Discovered by: Supernova Hunters<br/>Volunteers: peterfoele, Pinadva, BLGoodwin<br/><a href="http://www.astronomerstelegram.org/?read=10331">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(194.75116699999998, -26.598000000000003, {popupTitle: 'Supernova 2017dxh',popupDesc: 'Discovered by: Supernova Sighting<br/>Volunteers: WEB, deh86, Alan_Craggs<br/><a href="http://www.astronomerstelegram.org/?read=10426">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(204.2549399, -4.618898061, {popupTitle: 'Supernova 2017edm',popupDesc: 'Discovered by: Supernova Sighting<br/>Volunteers: simonemarcorini, ck12074, MvGulik<br/><a href="http://www.astronomerstelegram.org/?read=10444">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(315.754311, -49.31772, {popupTitle: 'Supernova 2017gih',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10676">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(9.137252, -30.58206, {popupTitle: 'Supernova 2017gig',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10676">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(359.39480699999996, 2.08644, {popupTitle: 'Supernova 2017ghw',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10676">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(41.998045, -22.00026, {popupTitle: 'Supernova 2017gjp',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10739">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(346.87608670000003, 3.603316667, {popupTitle: 'Supernova 2017fym',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10659">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(3.216218, -32.731390000000005, {popupTitle: 'Supernova 2017gfz',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10659">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(315.754311, -49.31772, {popupTitle: 'Supernova 2017gih',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10676">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(359.39480699999996, 2.08644, {popupTitle: 'Supernova 2017ghw',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10676">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(9.137252, -30.58206, {popupTitle: 'Supernova 2017gig',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10676">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(334.8091731, -28.40321303, {popupTitle: 'Supernova 2017fwa',popupDesc: 'Discovered by: Supernova Sighting<br/>Volunteers: ElisabethB, Ghost_Sheep_SWR, Barringj, nilium, kenzielach, CThomas, Cautator, Marinxar, Sebistian123, Luisje123, malcolmf, Tmit2, MvGulik, CarlKing, Bryan-Gomez, Astro_Denny, KNoxy1827, next_ghost, TrinityTestSite, Celebrian, robert_gagliano<br/><a href="http://www.astronomerstelegram.org/?read=10635">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(317.081741, -43.6703, {popupTitle: 'Supernova 2017fyo ',popupDesc: 'Discovered by: Supernova Sighting<br/><a href="http://www.astronomerstelegram.org/?read=10657">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(281.58507810000003, 70.73707235, {popupTitle: 'Supernova 2018cjn',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2018cjn">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(257.1764207, 28.52062821, {popupTitle: 'Supernova 2018clq',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2018clq">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(278.5608631, 32.9193344, {popupTitle: 'Supernova 2018cvb',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2018cvb">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(157.1580428, 6.172803134, {popupTitle: 'Supernova 2018ys',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2018ys">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(196.2447214, 30.50524338, {popupTitle: 'Supernova 2018ot',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2018ot">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(148.3334932, -18.41925022, {popupTitle: 'Supernova 2018fy',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2018fy">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(109.9845314, 46.82127632, {popupTitle: 'Supernova 2017jco',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017jco">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(20.792583, 39.074760999999995, {popupTitle: 'Supernova 2017iuo',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017iuo">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(317.7838186, 63.54869432, {popupTitle: 'Supernova 2017gop',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017gop">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(247.20186319999996, 23.50379136, {popupTitle: 'Supernova 2017fys',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017fys">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(44.03527935, 15.21307599, {popupTitle: 'Supernova 2017gcd',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017gcd">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(308.1338214, 58.15805678, {popupTitle: 'Supernova 2017gcg',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017gcg">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(281.23116170000003, 27.30721011, {popupTitle: 'Supernova 2017fod',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017fod">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(311.5877486, -27.52446403, {popupTitle: 'Supernova 2017ele',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017ele">Reference Link</a>'}));
+        cat_markers.addSources(A.marker(215.44229199999998, -1.3876190000000002, {popupTitle: 'Supernova 2017ehf',popupDesc: 'Discovered by: Supernova Hunters<br/><a href="https://wis-tns.weizmann.ac.il/object/2017ehf">Reference Link</a>'}));
+
+        var customImg = new Image();
+        customImg.onload = function() {
+          var cat_sources = A.catalog({shape: customImg});
+          aladin.addCatalog(cat_sources);
+          cat_sources.addSources([A.source(208.74945830000001, -28.33386111),A.source(157.7522917, -36.97394444),A.source(201.42945830000002, -29.54080556),A.source(326.889875, 5.85841667),A.source(322.29902000000004, -29.16283),A.source(201.478224, -37.23668),A.source(338.3444728, -1.357052821),A.source(323.2963091, 0.9398916198),A.source(307.5580199, -10.95050213),A.source(167.8883889, 9.072145372),A.source(170.83130119999998, 5.799905474),A.source(241.84878680000003, 10.42783037),A.source(166.70773480000003, 14.48778056),A.source(178.55989680000002, 11.7612763),A.source(194.75116699999998, -26.598000000000003),A.source(204.2549399, -4.618898061),A.source(315.754311, -49.31772),A.source(9.137252, -30.58206),A.source(359.39480699999996, 2.08644),A.source(41.998045, -22.00026),A.source(346.87608670000003, 3.603316667),A.source(3.216218, -32.731390000000005),A.source(315.754311, -49.31772),A.source(359.39480699999996, 2.08644),A.source(9.137252, -30.58206),A.source(334.8091731, -28.40321303),A.source(317.081741, -43.6703),A.source(281.58507810000003, 70.73707235),A.source(257.1764207, 28.52062821),A.source(278.5608631, 32.9193344),A.source(157.1580428, 6.172803134),A.source(196.2447214, 30.50524338),A.source(148.3334932, -18.41925022),A.source(109.9845314, 46.82127632),A.source(20.792583, 39.074760999999995),A.source(317.7838186, 63.54869432),A.source(247.20186319999996, 23.50379136),A.source(44.03527935, 15.21307599),A.source(308.1338214, 58.15805678),A.source(281.23116170000003, 27.30721011),A.source(311.5877486, -27.52446403),A.source(215.44229199999998, -1.3876190000000002)]);
+        }
+        customImg.src = 'https://lcjohnson.s3.amazonaws.com/zooicon.png'
+        aladin.animateToRaDec(300.0, -20.0, 20)
     </script>
   </body>
 </html>
